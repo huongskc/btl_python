@@ -16,5 +16,5 @@ df_merged = df_stat.merge(
 # Điền giá trị N/A nếu thiếu
 df_merged["Price"] = df_merged["Price"].fillna("N/A")
 
-df_merged.to_sql("stat_with_fee", conn, if_exists="replace", index=False)
+df_merged.to_sql("player_with_price", conn, if_exists="replace", index=False)
 conn.close()
