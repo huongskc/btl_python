@@ -46,8 +46,6 @@ plt.scatter(X_pca[:, 0], X_pca[:, 1],
             c=df["Cluster"], cmap="tab10", s=50, alpha=0.8, edgecolor='k')
 
 plt.title("Biểu đồ 2D K-Means Scatter (sau khi giảm chiều bằng PCA)", fontsize=13)
-plt.xlabel("PCA 1")
-plt.ylabel("PCA 2")
 
 centers = kmeans.cluster_centers_
 centers_pca = pca.transform(centers)
@@ -65,10 +63,7 @@ fig = plt.figure(figsize=(9,7))
 ax = fig.add_subplot(111, projection='3d')
 ax.scatter(X_pca_3d[:, 0], X_pca_3d[:, 1], X_pca_3d[:, 2],
            c=df["Cluster"], cmap="tab10", s=40, alpha=0.8, edgecolor='k')
-ax.set_title("Biểu đồ PCA 3D - Phân cụm cầu thủ", fontsize=13)
-ax.set_xlabel("PCA 1")
-ax.set_ylabel("PCA 2")
-ax.set_zlabel("PCA 3")
+ax.set_title("Biểu đồ PCA 3D K-Means Scatter", fontsize=13)
 
 centers_3d = pca_3d.transform(kmeans.cluster_centers_)
 ax.scatter(centers_3d[:, 0], centers_3d[:, 1], centers_3d[:, 2],
